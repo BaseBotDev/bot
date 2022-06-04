@@ -7,7 +7,11 @@ class Misc(commands.Cog):
 
     @commands.command(help = "Gets the latest BaseBot version", aliases = ["build", "b", "v", "ver"])
     async def version(self, ctx):
-        await ctx.send(f"Base Bot is currently on version **{version}**")
+        await ctx.send(f"Porov is currently on version **{version}**")
+    
+    @commands.command(help = "Gets the current bot latency", aliases = ["latency", "l"])
+    async def ping(self, ctx):
+            await ctx.send(f"**:ping_pong: Pong!** It took {round(self.bot.latency * 1000)} ms for me to respond!")
 
 def setup(bot):
     bot.add_cog(Misc(bot))
